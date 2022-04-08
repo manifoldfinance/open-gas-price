@@ -14,11 +14,7 @@ export default async function fetchBusyThreshold(
   url: string,
   clientId: string | undefined,
 ): Promise<BN> {
-  const options =
-    clientId !== undefined ? { headers: makeClientIdHeader(clientId) } : {};
-  const { busyThreshold: busyBaseFeePerGasThresholdInGwei } = await handleFetch(
-    url,
-    options,
-  );
+  const options = clientId !== undefined ? { headers: makeClientIdHeader(clientId) } : {};
+  const { busyThreshold: busyBaseFeePerGasThresholdInGwei } = await handleFetch(url, options);
   return gweiDecToWEIBN(busyBaseFeePerGasThresholdInGwei);
 }
