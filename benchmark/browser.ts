@@ -1,6 +1,8 @@
 
+export const BrowserName = 'Chrome' || 'Firefox' || 'Edge' || 'Safari' || 'IE' || 'Other';
 export interface BrowserConfig {
   /** Name of the browser. */
+  // @ts-expect-error
   name: BrowserName;
   /** Whether to run in headless mode. */
   headless: boolean;
