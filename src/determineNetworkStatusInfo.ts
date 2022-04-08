@@ -1,6 +1,6 @@
 import { BN } from 'ethereumjs-util';
 import fetchBusyThreshold from './fetchBusyThreshold';
-import calculateBusyThreshold from './calculateBusyThreshold';
+import { calculateBusyThreshold } from './calculateBusyThreshold';
 
 type EthQuery = any;
 

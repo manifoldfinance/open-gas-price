@@ -26,6 +26,7 @@
     "fs-extra": "^10.0.1",
     "jstat": "^1.9.5",
     "mocha": "^9.2.2",
+    "nock": "^13.2.4",
     "prettier": "^2.6.2",
     "ts-mocha": "^9.0.2",
     "tslib": "^2.3.1",
@@ -44,5 +45,8 @@
   "bugs": {
     "url": "https://github.com/manifoldfinance/open-gas-price/issues"
   },
-  "homepage": "https://github.com/manifoldfinance/open-gas-price#readme"
+  "homepage": "https://github.com/manifoldfinance/open-gas-price#readme",
+  "dependencies": {
+    "@metamask/controllers": "^27.1.1"
+  }
 }

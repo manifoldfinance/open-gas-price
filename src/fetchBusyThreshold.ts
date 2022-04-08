@@ -1,6 +1,7 @@
 import { BN } from 'ethereumjs-util';
-import { handleFetch, gweiDecToWEIBN } from '../util';
-import { makeClientIdHeader } from './gas-util';
+import { handleFetch, gweiDecToWEIBN } from './util';
+
+const makeClientIdHeader = (clientId: string) => ({ 'X-Client-Id': clientId });
 
 /**
  * Hits a URL that returns a base fee which represents a threshold we can use to determine whether

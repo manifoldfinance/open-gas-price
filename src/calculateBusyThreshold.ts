@@ -14,7 +14,7 @@ const NUMBER_OF_BLOCKS_TO_FETCH = 20_000;
  * @param ethQuery - An EthQuery instance.
  * @returns A promise for the 90th percentile base fee in WEI, as a BN.
  */
-export default async function calculateBusyThreshold(ethQuery: EthQuery): Promise<BN> {
+export async function calculateBusyThreshold(ethQuery: EthQuery): Promise<BN> {
   const blocks = await fetchBlockFeeHistory({
     ethQuery,
     numberOfBlocks: NUMBER_OF_BLOCKS_TO_FETCH,
@@ -23,3 +23,4 @@ export default async function calculateBusyThreshold(ethQuery: EthQuery): Promis
   const indexAtPercentile90 = Math.floor(sortedBaseFeesPerGas.length * 0.9) - 1;
   return sortedBaseFeesPerGas[indexAtPercentile90];
 }
+export default calculateBusyThreshold;
