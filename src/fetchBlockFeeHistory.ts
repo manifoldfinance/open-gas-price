@@ -1,5 +1,6 @@
 import { BN } from 'ethereumjs-util';
 import { query, fromHex, toHex } from '@metamask/controllers/dist/util';
+import { GasFeeController } from '@metamask/controllers/dist/gas/GasFeeController';
 
 type EthQuery = any;
 
@@ -219,7 +220,9 @@ function determineRequestChunkSpecifiers(
       distanceToEnd < MAX_NUMBER_OF_BLOCKS_PER_ETH_FEE_HISTORY_CALL
         ? distanceToEnd
         : MAX_NUMBER_OF_BLOCKS_PER_ETH_FEE_HISTORY_CALL;
+    // @ts-ignore
     const chunkEndBlockNumber = chunkStartBlockNumber.addn(numberOfBlocks);
+    // @ts-ignore
     specifiers.push({ numberOfBlocks, endBlockNumber: chunkEndBlockNumber });
   }
   return specifiers;

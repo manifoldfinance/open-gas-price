@@ -35,6 +35,7 @@ export default async function determineNetworkStatusInfo({
   try {
     busyBaseFeeThreshold = await fetchBusyThreshold(url, clientId);
   } catch (error) {
+    // @ts-ignore
     console.error(`Fetching busy threshold failed due to (${error.message}), trying fallback`);
     busyBaseFeeThreshold = await calculateBusyThreshold(ethQuery);
   }

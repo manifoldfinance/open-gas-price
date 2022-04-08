@@ -1,5 +1,10 @@
 import { BN } from 'ethereumjs-util';
-import { query, handleFetch, gweiDecToWEIBN, weiHexToGweiDec } from './util';
+import {
+  query,
+  handleFetch,
+  gweiDecToWEIBN,
+  weiHexToGweiDec,
+} from '@metamask/controllers/dist/util';
 import {
   GasFeeEstimates,
   EthGasPriceEstimate,
@@ -18,7 +23,7 @@ const makeClientIdHeader = (clientId: string) => ({ 'X-Client-Id': clientId });
  */
 export function normalizeGWEIDecimalNumbers(n: string | number) {
   const numberAsWEIHex = gweiDecToWEIBN(n).toString(16);
-  // @ts-expect-error
+
   const numberAsGWEI = weiHexToGweiDec(numberAsWEIHex).toString(10);
   return numberAsGWEI;
 }

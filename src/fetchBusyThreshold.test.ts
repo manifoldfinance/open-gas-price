@@ -1,3 +1,4 @@
+import { expect } from 'chai';
 import { BN } from 'ethereumjs-util';
 import nock from 'nock';
 import fetchBusyThreshold from './fetchBusyThreshold';

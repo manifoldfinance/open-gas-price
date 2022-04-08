@@ -1,5 +1,5 @@
 import { BN } from 'ethereumjs-util';
-import { handleFetch, gweiDecToWEIBN } from './util';
+import { handleFetch, gweiDecToWEIBN } from '@metamask/controllers/dist/util';
 
 const makeClientIdHeader = (clientId: string) => ({ 'X-Client-Id': clientId });
 
