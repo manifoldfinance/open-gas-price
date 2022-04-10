@@ -1,0 +1,400 @@
+<!DOCTYPE html><html class="default"><head><meta charSet="utf-8"/><meta http-equiv="x-ua-compatible" content="IE=edge"/><title>open-gas-price</title><meta name="description" content="Documentation for open-gas-price"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="assets/style.css"/><link rel="stylesheet" href="assets/highlight.css"/><script async src="assets/search.js" id="search-script"></script></head><body><script>document.body.classList.add(localStorage.getItem("tsd-theme") || "os")</script><header><div class="tsd-page-toolbar"><div class="container"><div class="table-wrap"><div class="table-cell" id="tsd-search" data-base="."><div class="field"><label for="tsd-search-field" class="tsd-widget search no-caption">Search</label><input type="text" id="tsd-search-field"/></div><ul class="results"><li class="state loading">Preparing search index...</li><li class="state failure">The search index is not available</li></ul><a href="index.html" class="title">open-gas-price</a></div><div class="table-cell" id="tsd-widgets"><div id="tsd-filter"><a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a><div class="tsd-filter-group"><div class="tsd-select" id="tsd-filter-visibility"><span class="tsd-select-label">All</span><ul class="tsd-select-list"><li data-value="public">Public</li><li data-value="protected">Public/Protected</li><li data-value="private" class="selected">All</li></ul></div> <input type="checkbox" id="tsd-filter-inherited" checked/><label class="tsd-widget" for="tsd-filter-inherited">Inherited</label><input type="checkbox" id="tsd-filter-externals" checked/><label class="tsd-widget" for="tsd-filter-externals">Externals</label></div></div><a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a></div></div></div></div><div class="tsd-page-title"><div class="container"><h1>open-gas-price</h1></div></div></header><div class="container container-main"><div class="row"><div class="col-8 col-content"><div class="tsd-panel tsd-typography"><p><a href="README.md">Open Gas Price</a> </p>
+
+<a href="#open-gas-price-api" id="open-gas-price-api" style="color: inherit; text-decoration: none;">
+  <h1>Open Gas Price API</h1>
+</a>
+<blockquote>
+<p>WIP</p>
+</blockquote>
+
+<a href="#overview" id="overview" style="color: inherit; text-decoration: none;">
+  <h2>Overview</h2>
+</a>
+<blockquote>
+<p>TODO</p>
+</blockquote>
+
+<a href="#quickstart" id="quickstart" style="color: inherit; text-decoration: none;">
+  <h2>Quickstart</h2>
+</a>
+<blockquote>
+<p>TODO</p>
+</blockquote>
+
+<a href="#namespaces" id="namespaces" style="color: inherit; text-decoration: none;">
+  <h3>Namespaces</h3>
+</a>
+<ul>
+<li><a href="#">CalculateBusyThreshold</a></li>
+<li><a href="#">DetermineNetworkStatusInfo</a></li>
+<li><a href="#">FetchBlockFeeHistory</a></li>
+<li><a href="#">FetchBusyThreshold</a></li>
+<li><a href="#">GasUtil</a></li>
+</ul>
+
+<a href="#functions" id="functions" style="color: inherit; text-decoration: none;">
+  <h2>Functions</h2>
+</a>
+
+<a href="#calculatebusythreshold" id="calculatebusythreshold" style="color: inherit; text-decoration: none;">
+  <h3>calculateBusyThreshold</h3>
+</a>
+<p>▸ <strong>calculateBusyThreshold</strong>(): <code>Promise</code>&lt;<code>BN</code>&gt;</p>
+<p>Uses historical base fees to determine a threshold we can use to determine whether the network is
+busy. Specifically, pulls the last 20,000 blocks (which at the time of this writing represents
+around 2 days), sorts the base fees of those blocks, then chooses the base fee which is 9/10 of
+the way into the list (i.e. the 90th percentile).</p>
+
+<a href="#parameters" id="parameters" style="color: inherit; text-decoration: none;">
+  <h4>Parameters</h4>
+</a>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>ethQuery</code></td>
+<td align="left"><code>any</code></td>
+<td align="left">An GraphQL Query instance.</td>
+</tr>
+</tbody></table>
+
+<a href="#returns" id="returns" style="color: inherit; text-decoration: none;">
+  <h4>Returns</h4>
+</a>
+<p><code>Promise</code>&lt;<code>BN</code>&gt;</p>
+<p>A promise for the 90th percentile base fee in WEI, as a BN.</p>
+
+<a href="#defined-in" id="defined-in" style="color: inherit; text-decoration: none;">
+  <h4>Defined in</h4>
+</a>
+<p><a href="https://github.com/manifoldfinance/open-gas-price/blob/4897ef1/src/calculateBusyThreshold.ts#L17">calculateBusyThreshold.ts:17</a></p>
+
+<a href="#namespace-fetchblockfeehistory" id="namespace-fetchblockfeehistory" style="color: inherit; text-decoration: none;">
+  <h2>Namespace: FetchBlockFeeHistory</h2>
+</a>
+
+<a href="#type-aliases" id="type-aliases" style="color: inherit; text-decoration: none;">
+  <h3>Type aliases</h3>
+</a>
+<ul>
+<li><a href="FetchBlockFeeHistory.md#block">Block</a></li>
+<li><a href="FetchBlockFeeHistory.md#ethfeehistoryresponse">EthFeeHistoryResponse</a></li>
+</ul>
+
+<a href="#functions-1" id="functions-1" style="color: inherit; text-decoration: none;">
+  <h3>Functions</h3>
+</a>
+<ul>
+<li><a href="FetchBlockFeeHistory.md#default">default</a></li>
+</ul>
+
+<a href="#type-aliases-1" id="type-aliases-1" style="color: inherit; text-decoration: none;">
+  <h2>Type aliases</h2>
+</a>
+
+<a href="#block" id="block" style="color: inherit; text-decoration: none;">
+  <h3>Block</h3>
+</a>
+<p>Ƭ <strong>Block</strong>&lt;<code>Percentile</code>&gt;: <code>Object</code></p>
+<p><strong><code>property</code></strong> number - The number of the block, as a BN.</p>
+<p><strong><code>property</code></strong> baseFeePerGas - The base fee per gas for the block in WEI, as a BN.</p>
+<p><strong><code>property</code></strong> gasUsedRatio - A number between 0 and 1 that represents the ratio between the gas paid
+for the block and its set gas limit.</p>
+<p><strong><code>property</code></strong> priorityFeesByPercentile - The priority fees paid for the transactions in the block
+that occurred at particular levels at which those transactions contributed to the overall gas
+used for the block, indexed by those percentiles. (See docs for {@link fetchBlockFeeHistory} for more
+on how this works.)</p>
+
+<a href="#type-parameters" id="type-parameters" style="color: inherit; text-decoration: none;">
+  <h4>Type parameters</h4>
+</a>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Percentile</code></td>
+<td align="left">extends <code>number</code></td>
+</tr>
+</tbody></table>
+
+<a href="#type-declaration" id="type-declaration" style="color: inherit; text-decoration: none;">
+  <h4>Type declaration</h4>
+</a>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>baseFeePerGas</code></td>
+<td align="left"><code>BN</code></td>
+</tr>
+<tr>
+<td align="left"><code>gasUsedRatio</code></td>
+<td align="left"><code>number</code></td>
+</tr>
+<tr>
+<td align="left"><code>number</code></td>
+<td align="left"><code>BN</code></td>
+</tr>
+<tr>
+<td align="left"><code>priorityFeesByPercentile</code></td>
+<td align="left"><code>Record</code>&lt;<code>Percentile</code>, <code>BN</code>&gt;</td>
+</tr>
+</tbody></table>
+
+<a href="#defined-in-1" id="defined-in-1" style="color: inherit; text-decoration: none;">
+  <h4>Defined in</h4>
+</a>
+<p><a href="https://github.com/manifoldfinance/open-gas-price/blob/4897ef1/src/fetchBlockFeeHistory.ts#L53">fetchBlockFeeHistory.ts:53</a></p>
+<hr>
+
+<a href="#ethfeehistoryresponse" id="ethfeehistoryresponse" style="color: inherit; text-decoration: none;">
+  <h3>EthFeeHistoryResponse</h3>
+</a>
+<p>Ƭ <strong>EthFeeHistoryResponse</strong>: <code>Object</code></p>
+<p><strong><code>property</code></strong> oldestBlock - The id of the oldest block (in hex format) in the range of blocks
+requested.</p>
+<p><strong><code>property</code></strong> baseFeePerGas - Base fee per gas for each block in the range of blocks requested.</p>
+<p><strong><code>property</code></strong> gasUsedRatio - A number between 0 and 1 that represents the gas used vs. gas limit for
+each block in the range of blocks requested.</p>
+<p><strong><code>property</code></strong> reward - The priority fee at the percentiles requested for each block in the range of
+blocks requested.</p>
+
+<a href="#type-declaration-1" id="type-declaration-1" style="color: inherit; text-decoration: none;">
+  <h4>Type declaration</h4>
+</a>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>baseFeePerGas</code></td>
+<td align="left"><code>string</code>[]</td>
+</tr>
+<tr>
+<td align="left"><code>gasUsedRatio</code></td>
+<td align="left"><code>number</code>[]</td>
+</tr>
+<tr>
+<td align="left"><code>oldestBlock</code></td>
+<td align="left"><code>string</code></td>
+</tr>
+<tr>
+<td align="left"><code>reward?</code></td>
+<td align="left"><code>string</code>[][]</td>
+</tr>
+</tbody></table>
+
+<a href="#defined-in-2" id="defined-in-2" style="color: inherit; text-decoration: none;">
+  <h4>Defined in</h4>
+</a>
+<p><a href="https://github.com/manifoldfinance/open-gas-price/blob/4897ef1/src/fetchBlockFeeHistory.ts#L33">fetchBlockFeeHistory.ts:33</a></p>
+
+<a href="#functions-2" id="functions-2" style="color: inherit; text-decoration: none;">
+  <h2>Functions</h2>
+</a>
+
+<a href="#default" id="default" style="color: inherit; text-decoration: none;">
+  <h3>default</h3>
+</a>
+<p>▸ <strong>default</strong>&lt;<code>Percentile</code>&gt;(<code>args</code>): <code>Promise</code>&lt;<a href="FetchBlockFeeHistory.md#block"><code>Block</code></a>&lt;<code>Percentile</code>&gt;[]&gt;</p>
+<p>Uses <code>eth_feeHistory</code> (an EIP-1559 feature) to obtain information about gas fees from a range of
+blocks that have occurred recently on a network.</p>
+<p>To learn more, see these resources:</p>
+<ul>
+<li><a href="https://infura.io/docs/ethereum#operation/eth_feeHistory">https://infura.io/docs/ethereum#operation/eth_feeHistory</a></li>
+<li><a href="https://github.com/zsfelfoldi/feehistory/blob/main/docs/feeHistory.md">https://github.com/zsfelfoldi/feehistory/blob/main/docs/feeHistory.md</a></li>
+<li><a href="https://github.com/ethereum/go-ethereum/blob/57a3fab8a75eeb9c2f4fab770b73b51b9fe672c5/eth/gasprice/feehistory.go#L180">https://github.com/ethereum/go-ethereum/blob/57a3fab8a75eeb9c2f4fab770b73b51b9fe672c5/eth/gasprice/feehistory.go#L180</a></li>
+<li><a href="https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md">https://github.com/ethereum/EIPs/blob/master/EIPS/eip-1559.md</a></li>
+<li><a href="https://gas-api.metaswap.codefi.network/testFeeHistory">https://gas-api.metaswap.codefi.network/testFeeHistory</a></li>
+</ul>
+
+<a href="#type-parameters-1" id="type-parameters-1" style="color: inherit; text-decoration: none;">
+  <h4>Type parameters</h4>
+</a>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>Percentile</code></td>
+<td align="left">extends <code>number</code></td>
+</tr>
+</tbody></table>
+
+<a href="#parameters-1" id="parameters-1" style="color: inherit; text-decoration: none;">
+  <h4>Parameters</h4>
+</a>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>args</code></td>
+<td align="left"><code>Object</code></td>
+<td align="left">The arguments to this function.</td>
+</tr>
+<tr>
+<td align="left"><code>args.endBlock?</code></td>
+<td align="left"><code>BN</code> | <code>&quot;latest&quot;</code></td>
+<td align="left">The desired end of the requested block range. Can be &quot;latest&quot; if you want to start from the latest successful block or the number of a known past block.</td>
+</tr>
+<tr>
+<td align="left"><code>args.ethQuery</code></td>
+<td align="left"><code>any</code></td>
+<td align="left">An EthQuery instance that wraps a provider for the network in question.</td>
+</tr>
+<tr>
+<td align="left"><code>args.numberOfBlocks</code></td>
+<td align="left"><code>number</code></td>
+<td align="left">How many total blocks to fetch. Note that if this is more than 1024, multiple calls to <code>eth_feeHistory</code> will be made.</td>
+</tr>
+<tr>
+<td align="left"><code>args.percentiles?</code></td>
+<td align="left">readonly <code>Percentile</code>[]</td>
+<td align="left">A set of numbers between 1 and 100 which will dictate how <code>priorityFeesByPercentile</code> in each returned block will be formed. When Ethereum runs the <code>eth_feeHistory</code> method, for each block it is considering, it will first sort all transactions by the priority fee. It will then go through each transaction and add the total amount of gas paid for that transaction to a bucket which maxes out at the total gas used for the whole block. As the bucket fills, it will cross percentages which correspond to the percentiles specified here, and the priority fees of the first transactions which cause it to reach those percentages will be recorded. Hence, <code>priorityFeesByPercentile</code> represents the priority fees of transactions at key gas used contribution levels, where earlier levels have smaller contributions and later levels have higher contributions.</td>
+</tr>
+</tbody></table>
+
+<a href="#returns-1" id="returns-1" style="color: inherit; text-decoration: none;">
+  <h4>Returns</h4>
+</a>
+<p><code>Promise</code>&lt;<a href="FetchBlockFeeHistory.md#block"><code>Block</code></a>&lt;<code>Percentile</code>&gt;[]&gt;</p>
+<p>The list of blocks and their fee data, sorted from oldest to newest.</p>
+
+<a href="#defined-in-3" id="defined-in-3" style="color: inherit; text-decoration: none;">
+  <h4>Defined in</h4>
+</a>
+<p><a href="https://github.com/manifoldfinance/open-gas-price/blob/4897ef1/src/fetchBlockFeeHistory.ts#L92">fetchBlockFeeHistory.ts:92</a></p>
+
+<a href="#namespace-determinenetworkstatusinfo" id="namespace-determinenetworkstatusinfo" style="color: inherit; text-decoration: none;">
+  <h2>Namespace: DetermineNetworkStatusInfo</h2>
+</a>
+
+<a href="#type-aliases-2" id="type-aliases-2" style="color: inherit; text-decoration: none;">
+  <h3>Type aliases</h3>
+</a>
+<ul>
+<li><a href="DetermineNetworkStatusInfo.md#networkstatusinfo">NetworkStatusInfo</a></li>
+</ul>
+
+<a href="#functions-3" id="functions-3" style="color: inherit; text-decoration: none;">
+  <h3>Functions</h3>
+</a>
+<ul>
+<li><a href="DetermineNetworkStatusInfo.md#default">default</a></li>
+</ul>
+
+<a href="#type-aliases-3" id="type-aliases-3" style="color: inherit; text-decoration: none;">
+  <h2>Type aliases</h2>
+</a>
+
+<a href="#networkstatusinfo" id="networkstatusinfo" style="color: inherit; text-decoration: none;">
+  <h3>NetworkStatusInfo</h3>
+</a>
+<p>Ƭ <strong>NetworkStatusInfo</strong>: <code>Object</code></p>
+
+<a href="#type-declaration-2" id="type-declaration-2" style="color: inherit; text-decoration: none;">
+  <h4>Type declaration</h4>
+</a>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>isNetworkBusy</code></td>
+<td align="left"><code>boolean</code></td>
+</tr>
+</tbody></table>
+
+<a href="#defined-in-4" id="defined-in-4" style="color: inherit; text-decoration: none;">
+  <h4>Defined in</h4>
+</a>
+<p><a href="https://github.com/manifoldfinance/open-gas-price/blob/4897ef1/src/determineNetworkStatusInfo.ts#L7">determineNetworkStatusInfo.ts:7</a></p>
+
+<a href="#functions-4" id="functions-4" style="color: inherit; text-decoration: none;">
+  <h2>Functions</h2>
+</a>
+
+<a href="#default-1" id="default-1" style="color: inherit; text-decoration: none;">
+  <h3>default</h3>
+</a>
+<p>▸ <strong>default</strong>(<code>args</code>): <code>Promise</code>&lt;<a href="DetermineNetworkStatusInfo.md#networkstatusinfo"><code>NetworkStatusInfo</code></a>&gt;</p>
+<p>Collects information about the status of the network. Right now the only piece of information is
+whether the network is &quot;busy&quot; — i.e., whether the base fee for the latest block exceeds a
+particular &quot;busy&quot; threshold.</p>
+
+<a href="#parameters-2" id="parameters-2" style="color: inherit; text-decoration: none;">
+  <h4>Parameters</h4>
+</a>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Type</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>args</code></td>
+<td align="left"><code>Object</code></td>
+<td align="left">The arguments.</td>
+</tr>
+<tr>
+<td align="left"><code>args.clientId</code></td>
+<td align="left"><code>undefined</code> | <code>string</code></td>
+<td align="left">The ID of the client making this request.</td>
+</tr>
+<tr>
+<td align="left"><code>args.ethQuery</code></td>
+<td align="left"><code>any</code></td>
+<td align="left">An EthQuery instance.</td>
+</tr>
+<tr>
+<td align="left"><code>args.latestBaseFee</code></td>
+<td align="left"><code>BN</code></td>
+<td align="left">The base fee for the latest block in WEI.</td>
+</tr>
+<tr>
+<td align="left"><code>args.url</code></td>
+<td align="left"><code>string</code></td>
+<td align="left">The URL for the API used to determine a base fee threshold.</td>
+</tr>
+</tbody></table>
+
+<a href="#returns-2" id="returns-2" style="color: inherit; text-decoration: none;">
+  <h4>Returns</h4>
+</a>
+<p><code>Promise</code>&lt;<a href="DetermineNetworkStatusInfo.md#networkstatusinfo"><code>NetworkStatusInfo</code></a>&gt;</p>
+<p>The network status info.</p>
+
+<a href="#defined-in-5" id="defined-in-5" style="color: inherit; text-decoration: none;">
+  <h4>Defined in</h4>
+</a>
+<p><a href="https://github.com/manifoldfinance/open-gas-price/blob/4897ef1/src/determineNetworkStatusInfo.ts#L23">determineNetworkStatusInfo.ts:23</a></p>
+</div></div><div class="col-4 col-menu menu-sticky-wrap menu-highlight"><nav class="tsd-navigation primary"><ul><li class="current"><a href="modules.html">Exports</a></li><li class=" tsd-kind-namespace"><a href="modules/CalculateBusyThreshold.html">Calculate<wbr/>Busy<wbr/>Threshold</a></li><li class=" tsd-kind-namespace"><a href="modules/DetermineNetworkStatusInfo.html">Determine<wbr/>Network<wbr/>Status<wbr/>Info</a></li><li class=" tsd-kind-namespace"><a href="modules/FetchBlockFeeHistory.html">Fetch<wbr/>Block<wbr/>Fee<wbr/>History</a></li><li class=" tsd-kind-namespace"><a href="modules/FetchBusyThreshold.html">Fetch<wbr/>Busy<wbr/>Threshold</a></li><li class=" tsd-kind-namespace"><a href="modules/GasUtil.html">Gas<wbr/>Util</a></li><li class=" tsd-kind-namespace"><a href="modules/Transaction.html">Transaction</a></li><li class=" tsd-kind-namespace"><a href="modules/Version.html">Version</a></li></ul></nav><nav class="tsd-navigation secondary menu-sticky"><ul></ul></nav></div></div></div><footer class="with-border-bottom"><div class="container"><h2>Settings</h2><p>Theme <select id="theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></p></div></footer><div class="container tsd-generator"><p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></div><div class="overlay"></div><script src="assets/main.js"></script></body></html>

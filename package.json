@@ -1,27 +1,68 @@
 {
-  "name": "gas-price",
-  "version": "1.0.0",
+  "name": "ds-gas",
+  "version": "0.1.0",
+  "private": false,
   "description": "",
-  "main": "index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.mjs",
+  "typings": "dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "devDependencies": {
+    "@babel/core": "^7.17.9",
+    "@babel/plugin-proposal-class-properties": "^7.16.7",
+    "@babel/plugin-proposal-nullish-coalescing-operator": "^7.16.7",
+    "@babel/plugin-transform-runtime": "^7.17.0",
+    "@babel/plugin-transform-typescript": "^7.16.8",
+    "@babel/preset-typescript": "^7.16.7",
+    "@rollup/plugin-babel": "^5.3.1",
+    "@rollup/plugin-typescript": "^8.3.1",
+    "@types/chai": "^4.3.0",
+    "@types/mocha": "^9.1.0",
+    "@types/node": "^16.7.10",
+    "chai": "^4.3.6",
+    "codecov": "^3.8.3",
+    "downlevel-dts": "^0.9.0",
+    "esbuild": "^0.14.34",
+    "fs-extra": "^10.0.1",
+    "jstat": "^1.9.5",
+    "mocha": "^9.2.2",
+    "nock": "^13.2.4",
+    "prettier": "^2.6.2",
+    "rollup": "^2.70.1",
+    "rollup-plugin-dts": "^4.2.1",
+    "rollup-plugin-esbuild": "^4.9.1",
+    "ts-mocha": "^9.0.2",
+    "ts-node": "^10.2.1",
+    "tslib": "^2.3.1",
+    "typedoc": "^0.22.14",
+    "typescript": "4.6.3"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "keywords": [],
-  "author": "sam bacha",
-  "license": "ISC",
-  "dependencies": {
-    "@ethersproject/bignumber": "^5.5.0",
-    "@ethersproject/units": "^5.5.0",
-    "axios": "^0.24.0",
-    "express": "^4.17.2"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/manifoldfinance/open-gas-price.git"
   },
-  "devDependencies": {
-    "@types/jest": "^27.4.0",
-    "@types/node": "^14",
-    "jest": "^27.4.7",
-    "prettier": "^2.5.1",
-    "ts-jest": "^27.1.2",
-    "ts-node": "^10.4.0",
-    "typescript": "^4.5.4"
+  "keywords": [],
+  "author": "SEE CONTRIBUTORS",
+  "license": "SEE LICENSE IN LICENSE",
+  "bugs": {
+    "url": "https://github.com/manifoldfinance/open-gas-price/issues"
+  },
+  "homepage": "https://github.com/manifoldfinance/open-gas-price#readme",
+  "dependencies": {
+    "@metamask/controllers": "^27.1.1",
+    "@types/bn.js": "^5.1.0"
   }
 }

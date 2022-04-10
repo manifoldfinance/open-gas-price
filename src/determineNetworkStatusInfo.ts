@@ -1,6 +1,6 @@
 import { BN } from 'ethereumjs-util';
 import fetchBusyThreshold from './fetchBusyThreshold';
-import calculateBusyThreshold from './calculateBusyThreshold';
+import { calculateBusyThreshold } from './calculateBusyThreshold';
 
 type EthQuery = any;
 
@@ -35,9 +35,8 @@ export default async function determineNetworkStatusInfo({
   try {
     busyBaseFeeThreshold = await fetchBusyThreshold(url, clientId);
   } catch (error) {
-    console.error(
-      `Fetching busy threshold failed due to (${error.message}), trying fallback`,
-    );
+    // @ts-ignore
+    console.error(`Fetching busy threshold failed due to (${error.message}), trying fallback`);
     busyBaseFeeThreshold = await calculateBusyThreshold(ethQuery);
   }
 
